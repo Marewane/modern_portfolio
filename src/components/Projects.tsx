@@ -9,6 +9,21 @@ const FILTERS = ["All", "Full-Stack", "AI / ML", "Frontend", "API"];
 
 const projects = [
   {
+    id: 10,
+    title: "EduFlow",
+    category: "Full-Stack",
+    description:
+      "An all-in-one learning platform designed for modern classrooms. Create courses, upload video lessons, manage homework assignments, track student attendance, and offer AI study support in one place.",
+    tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
+    stars: 156,
+    color: "from-blue-600/20 to-violet-900/10",
+    accentColor: "#6d28d9",
+    liveUrl: "https://edu-flow-omega-blond.vercel.app/",
+    githubUrl: "https://github.com/Marewane/EduFlow",
+    image: "/projects/eduflow.png",
+    featured: true,
+  },
+  {
     id: 7,
     title: "CoreTrade",
     category: "Full-Stack",
