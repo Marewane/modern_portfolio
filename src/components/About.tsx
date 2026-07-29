@@ -8,7 +8,7 @@ const stats = [
   { label: "Years of Dev", value: "3+", icon: Calendar },
   { label: "Projects Built", value: "25+", icon: Code2 },
   { label: "AI & ML Focus", value: "1yr", icon: BrainCircuit },
-  { label: "Location", value: "Morocco", icon: MapPin },
+  { label: "Tit Mellil, MA", value: "Casablanca", icon: MapPin },
 ];
 
 const techBadges = [
