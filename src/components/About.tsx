@@ -38,7 +38,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Avatar / Visual */}
           <AnimatedSection direction="right" delay={0.1}>
-            <div className="relative flex justify-center lg:justify-start">
+            <div className="relative flex justify-center lg:justify-start min-h-[320px] items-center">
               {/* Rotating rings */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div

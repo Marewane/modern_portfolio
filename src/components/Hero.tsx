@@ -93,7 +93,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       {/* Animated orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -126,10 +126,15 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-indigo-500/30 text-indigo-300 text-sm font-medium mb-8"
+          className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-10"
+          style={{
+            background: "rgba(16,185,129,0.08)",
+            border: "1px solid rgba(16,185,129,0.25)",
+            backdropFilter: "blur(12px)",
+          }}
         >
-          <span className="w-2 h-2 rounded-full bg-green-400 pulse-dot" />
-          Available for new opportunities
+          <span className="w-2 h-2 rounded-full bg-emerald-400 pulse-dot" />
+          <span className="text-emerald-300 text-sm font-semibold tracking-wide">Open to new opportunities</span>
         </motion.div>
 
         {/* Name */}
@@ -160,7 +165,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.65 }}
-          className="max-w-2xl mx-auto text-slate-400 text-lg mb-12 leading-relaxed"
+          className="max-w-xl mx-auto text-slate-400 text-base md:text-lg mb-12 leading-relaxed"
         >
           I craft pixel-perfect, performant digital experiences — from elegant
           interfaces to scalable backend systems. Let&apos;s build something great
@@ -204,7 +209,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="flex items-center justify-center gap-4 mb-12"
+          className="flex items-center justify-center gap-3"
         >
           {[
             { icon: GitHubIcon, label: "GitHub", href: "https://github.com/Marewane" },
