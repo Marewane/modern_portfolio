@@ -24,6 +24,21 @@ const projects = [
     featured: true,
   },
   {
+    id: 11,
+    title: "Blog API",
+    category: "API",
+    description:
+      "A RESTful API backend for a full-featured blog platform built with Laravel 12 & PHP 8.2. Features token-based auth via Laravel Sanctum, full CRUD for posts, comments, replies, likes, categories, and user profiles.",
+    tags: ["Laravel 12", "PHP 8.2", "Sanctum", "MySQL", "REST API", "PHPUnit"],
+    stars: 89,
+    color: "from-red-600/20 to-rose-900/10",
+    accentColor: "#ef4444",
+    liveUrl: "#",
+    githubUrl: "https://github.com/Marewane/blog_api_laravel",
+    image: "/projects/blog-api-laravel.png",
+    featured: true,
+  },
+  {
     id: 7,
     title: "CoreTrade",
     category: "Full-Stack",
