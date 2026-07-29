@@ -14,7 +14,8 @@ const stats = [
 const techBadges = [
   // Full-stack
   "React", "Next.js", "TypeScript", "Node.js", "Express",
-  "PostgreSQL", "MongoDB", "Tailwind CSS", "Docker",
+  "PHP", "Laravel", "Bootstrap", "MUI",
+  "PostgreSQL", "MySQL", "MongoDB", "Tailwind CSS", "Docker",
   // AI / ML
   "Python", "PyTorch", "Scikit-learn", "Pandas", "NumPy",
   "LangChain", "OpenAI API", "Hugging Face",
