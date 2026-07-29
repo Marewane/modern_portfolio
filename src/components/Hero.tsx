@@ -188,14 +188,15 @@ export default function Hero() {
               →
             </span>
           </button>
-          <button
+          <a
             id="hero-resume-btn"
-            onClick={() => alert("Resume download coming soon!")}
+            href="/OptionAsPdfCanva.pdf.pdf"
+            download="Marwane_CV.pdf"
             className="group flex items-center gap-2 px-8 py-4 rounded-xl glass border border-white/12 text-white font-semibold text-base hover:border-indigo-500/50 hover:bg-white/6 transition-all duration-200 hover:-translate-y-1"
           >
             <Download size={18} className="text-indigo-400" />
             Download CV
-          </button>
+          </a>
         </motion.div>
 
         {/* Social icons */}
