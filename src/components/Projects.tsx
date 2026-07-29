@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, ExternalLink, Star } from "lucide-react";
+import { Code2, ExternalLink } from "lucide-react";
 import AnimatedSection from "./ui/AnimatedSection";
 
 const FILTERS = ["All", "Full-Stack", "AI / ML", "Frontend", "API"];
@@ -271,10 +271,6 @@ export default function Projects() {
                     <h3 className="text-white font-semibold text-base group-hover:text-indigo-300 transition-colors">
                       {project.title}
                     </h3>
-                    <div className="flex items-center gap-1 text-slate-500 text-xs ml-2 shrink-0">
-                      <Star size={12} />
-                      <span>{project.stars}</span>
-                    </div>
                   </div>
                   <p className="text-slate-400 text-sm leading-relaxed mb-4">
                     {project.description}
