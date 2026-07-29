@@ -204,7 +204,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="flex items-center justify-center gap-4"
+          className="flex items-center justify-center gap-4 mb-12"
         >
           {[
             { icon: GitHubIcon, label: "GitHub", href: "https://github.com/Marewane" },
