@@ -34,6 +34,7 @@ const projects = [
     liveUrl: "https://core-trade-taupe.vercel.app/",
     githubUrl: "https://github.com/Marewane/CoreTrade.git",
     image: "/projects/core-trade.png",
+  }
 ];
 
 export default function Projects() {
