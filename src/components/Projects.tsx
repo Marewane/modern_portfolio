@@ -59,8 +59,8 @@ export default function Projects() {
                 className="sticky w-full transition-transform"
                 style={{ top: `calc(10vh + ${i * 40}px)`, zIndex: i + 10 }}
               >
-                <AnimatedSection className="w-full relative group shadow-2xl mb-12 rounded-3xl">
-                  <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 surf-card p-6 md:p-12 rounded-3xl border border-[var(--bd-2)]" style={{ background: '#0a0a0a' }}>
+                <AnimatedSection className="w-full relative group mb-12 rounded-3xl transition-all duration-1000">
+                  <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 surf-card p-6 md:p-12 rounded-3xl border border-[var(--bd-2)] shadow-[0_-20px_60px_rgba(0,0,0,0.8)]" style={{ background: '#0a0a0a' }}>
                   
                   {/* Image Section */}
                   <div className="w-full lg:w-3/5 aspect-video relative rounded-2xl overflow-hidden bg-neutral-900 border border-[var(--bd-2)]">
@@ -68,7 +68,7 @@ export default function Projects() {
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)] scale-100 group-hover:scale-[1.15]"
                       />
                     ) : (
                       <div className="w-full h-full bg-neutral-900 flex items-center justify-center">

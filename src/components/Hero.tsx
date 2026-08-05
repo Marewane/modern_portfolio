@@ -43,7 +43,7 @@ export default function Hero() {
             I am
           </span>
           <h1 className="text-[clamp(3rem,8vw,8rem)] font-extrabold leading-[0.9] tracking-tight text-white mb-6">
-            Marwane <br/> Ahmed
+            Marwane <br/> Laamiri
           </h1>
           <p className="max-w-xl text-neutral-400 text-lg md:text-xl font-light mb-12">
             Full-Stack Developer & AI Engineer crafting experiences beyond the ordinary.
