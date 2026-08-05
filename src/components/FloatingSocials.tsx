@@ -32,7 +32,7 @@ export default function FloatingSocials() {
       </motion.a>
 
       <motion.a
-        href="https://linkedin.com/in/marwane-ahmed"
+        href="https://www.linkedin.com/in/marwane-laamiri/"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1, x: -5 }}

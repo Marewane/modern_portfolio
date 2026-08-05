@@ -11,9 +11,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Marwane Ahmed – Full-Stack Developer & AI Engineer",
+  title: "Marwane Laamiri – Full-Stack Developer & AI Engineer",
   description:
-    "Portfolio of Marwane Ahmed — full-stack developer and AI engineer specialising in React, Next.js, Python, PyTorch and LLM-powered applications.",
+    "Portfolio of Marwane Laamiri — full-stack developer and AI engineer specialising in React, Next.js, Python, PyTorch and LLM-powered applications.",
   keywords: [
     "developer",
     "portfolio",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "langchain",
   ],
   openGraph: {
-    title: "Marwane Ahmed – Full-Stack Developer & AI Engineer",
+    title: "Marwane Laamiri – Full-Stack Developer & AI Engineer",
     description:
-      "Portfolio of Marwane Ahmed — full-stack developer and AI engineer.",
+      "Portfolio of Marwane Laamiri — full-stack developer and AI engineer.",
     type: "website",
   },
 };

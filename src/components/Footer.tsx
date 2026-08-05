@@ -46,7 +46,7 @@ export default function Footer() {
               <p className="text-white font-mono text-xs uppercase tracking-widest mb-6">Socials</p>
               <ul className="space-y-3">
                 <li><a href="https://github.com/Marewane" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-white transition-colors text-sm font-medium">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/marwane-ahmed" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-white transition-colors text-sm font-medium">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/marwane-laamiri/" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-white transition-colors text-sm font-medium">LinkedIn</a></li>
               </ul>
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-[var(--bd-2)] gap-4">
           <p className="text-neutral-500 text-sm font-mono uppercase tracking-widest">
-            © {new Date().getFullYear()} Marwane Ahmed.
+            © {new Date().getFullYear()} Marwane Laamiri.
           </p>
           <button onClick={scrollToTop} className="flex items-center gap-2 text-neutral-500 hover:text-white text-xs font-mono uppercase tracking-widest transition-colors">
             Back to top <ArrowUp size={14} />

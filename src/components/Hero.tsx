@@ -67,7 +67,7 @@ export default function Hero() {
                 <GitHubIcon />
               </a>
               <a
-                href="https://linkedin.com/in/marwane-ahmed"
+                href="https://www.linkedin.com/in/marwane-laamiri/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

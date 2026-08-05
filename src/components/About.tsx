@@ -33,7 +33,7 @@ export default function About() {
                </div>
                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-950/80" />
                <div className="absolute bottom-8 left-8">
-                 <p className="text-white font-medium text-lg">Marwane Ahmed</p>
+                 <p className="text-white font-medium text-lg">Marwane Laamiri</p>
                  <p className="text-neutral-400 text-sm">Full-Stack · AI Engineer</p>
                </div>
             </div>
