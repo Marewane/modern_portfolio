@@ -34,17 +34,6 @@ const projects = [
     liveUrl: "https://core-trade-taupe.vercel.app/",
     githubUrl: "https://github.com/Marewane/CoreTrade.git",
     image: "/projects/core-trade.png",
-  },
-  {
-    id: 4,
-    title: "AI Chat Assistant",
-    category: "AI / ML Integration",
-    description: "A production-ready chat interface powered by OpenAI GPT-4 and LangChain. Implements advanced conversational memory and streaming responses.",
-    tags: ["LangChain", "OpenAI", "Next.js", "AI SDK"],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: null, // Fallback
-  }
 ];
 
 export default function Projects() {
