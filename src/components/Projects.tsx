@@ -69,7 +69,7 @@ export default function Projects() {
                 className="sticky w-full transition-transform"
                 style={{ top: `calc(10vh + ${i * 40}px)`, zIndex: i + 10 }}
               >
-                <AnimatedSection className="w-full relative group shadow-2xl mb-12">
+                <AnimatedSection className="w-full relative group shadow-2xl mb-12 rounded-3xl bg-neutral-950">
                   <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 surf-card p-6 md:p-12 rounded-3xl border border-[var(--bd-2)]">
                   
                   {/* Image Section */}
