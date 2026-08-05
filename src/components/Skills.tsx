@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import AnimatedSection from "./ui/AnimatedSection";
 
 const ReactLogo = () => (
@@ -127,69 +126,15 @@ const MuiLogo = () => (
   </svg>
 );
 
-const skillCategories = [
-  {
-    category: "Frontend",
-    color: "#6366f1",
-    skills: [
-      { name: "React / Next.js", Logo: ReactLogo },
-      { name: "TypeScript", Logo: TypeScriptLogo },
-      { name: "CSS / Tailwind CSS", Logo: TailwindLogo },
-      { name: "Bootstrap", Logo: BootstrapLogo },
-      { name: "MUI (Material UI)", Logo: MuiLogo },
-      { name: "State Management (Zustand, Redux)", Logo: ReduxLogo },
-    ],
-  },
-  {
-    category: "Backend & DevOps",
-    color: "#06b6d4",
-    skills: [
-      { name: "Node.js / Express", Logo: NodeLogo },
-      { name: "PHP / Laravel", Logo: LaravelLogo },
-      { name: "MySQL / PostgreSQL / MongoDB", Logo: MySQLLogo },
-      { name: "REST APIs & GraphQL", Logo: ApiLogo },
-      { name: "Docker & Deployment", Logo: DockerLogo },
-    ],
-  },
-  {
-    category: "AI & Machine Learning",
-    color: "#10b981",
-    skills: [
-      { name: "Python / PyTorch", Logo: PythonLogo },
-      { name: "Scikit-learn / Pandas", Logo: MlLogo },
-      { name: "LLMs & Prompt Engineering", Logo: AiLogo },
-      { name: "LangChain / Hugging Face", Logo: BrainLogo },
-    ],
-  },
-];
-
-// ── SVG Logos ──────────────────────────────────────────────
 const VsCodeLogo = () => (
   <svg viewBox="0 0 100 100" className="w-7 h-7">
     <mask id="vsc-mask">
-      <path
-        fill="white"
-        d="M70.9 3.8L50 51.2 32.8 36.4 28 39.2l16.4 10.8L28 60.8l4.8 2.8L50 48.8l20.9 47.4 7.1-3.9V7.7z"
-      />
+      <path fill="white" d="M70.9 3.8L50 51.2 32.8 36.4 28 39.2l16.4 10.8L28 60.8l4.8 2.8L50 48.8l20.9 47.4 7.1-3.9V7.7z"/>
     </mask>
-    <path
-      fill="#0065A9"
-      d="M70.9 3.8L50 51.2 32.8 36.4 28 39.2l16.4 10.8L28 60.8l4.8 2.8L50 48.8l20.9 47.4 7.1-3.9V7.7z"
-    />
-    <path
-      fill="#007ACC"
-      d="M70.9 3.8l7.1 3.9v88.6l-7.1 3.9L50 51.2z"
-    />
-    <path
-      fill="#1F9CF0"
-      d="M28 39.2l-6 3.3v14.9l6 3.4 22-13.6z"
-    />
-    <path
-      fill="white"
-      fillOpacity="0.25"
-      mask="url(#vsc-mask)"
-      d="M70.9 3.8L50 51.2 32.8 36.4 28 39.2l16.4 10.8L28 60.8l4.8 2.8L50 48.8l20.9 47.4 7.1-3.9V7.7z"
-    />
+    <path fill="#0065A9" d="M70.9 3.8L50 51.2 32.8 36.4 28 39.2l16.4 10.8L28 60.8l4.8 2.8L50 48.8l20.9 47.4 7.1-3.9V7.7z"/>
+    <path fill="#007ACC" d="M70.9 3.8l7.1 3.9v88.6l-7.1 3.9L50 51.2z"/>
+    <path fill="#1F9CF0" d="M28 39.2l-6 3.3v14.9l6 3.4 22-13.6z"/>
+    <path fill="white" fillOpacity="0.25" mask="url(#vsc-mask)" d="M70.9 3.8L50 51.2 32.8 36.4 28 39.2l16.4 10.8L28 60.8l4.8 2.8L50 48.8l20.9 47.4 7.1-3.9V7.7z"/>
   </svg>
 );
 
@@ -205,14 +150,8 @@ const FigmaLogo = () => (
 
 const JupyterLogo = () => (
   <svg viewBox="0 0 207 232" className="w-7 h-7">
-    <path
-      d="M103.5 0C87.8 0 74.9 4.7 68 12.6c4.1-1.1 9.2-1.8 15.5-1.8 28.9 0 52.3 13.8 52.3 30.8S112.4 71.4 83.5 71.4c-6.3 0-11.4-.6-15.5-1.7C75 77.6 87.9 82.2 103.5 82.2c26.5 0 48-18.4 48-41.1S130 0 103.5 0z"
-      fill="#F37626"
-    />
-    <path
-      d="M103.5 149.8c-26.5 0-48 18.4-48 41.1s21.5 41.1 48 41.1c15.7 0 28.6-4.7 35.5-12.6-4.1 1.1-9.2 1.8-15.5 1.8-28.9 0-52.3-13.8-52.3-30.8s23.4-30.8 52.3-30.8c6.3 0 11.4.6 15.5 1.7-6.9-7.9-19.8-12.5-35.5-12.5z"
-      fill="#F37626"
-    />
+    <path d="M103.5 0C87.8 0 74.9 4.7 68 12.6c4.1-1.1 9.2-1.8 15.5-1.8 28.9 0 52.3 13.8 52.3 30.8S112.4 71.4 83.5 71.4c-6.3 0-11.4-.6-15.5-1.7C75 77.6 87.9 82.2 103.5 82.2c26.5 0 48-18.4 48-41.1S130 0 103.5 0z" fill="#F37626"/>
+    <path d="M103.5 149.8c-26.5 0-48 18.4-48 41.1s21.5 41.1 48 41.1c15.7 0 28.6-4.7 35.5-12.6-4.1 1.1-9.2 1.8-15.5 1.8-28.9 0-52.3-13.8-52.3-30.8s23.4-30.8 52.3-30.8c6.3 0 11.4.6 15.5 1.7-6.9-7.9-19.8-12.5-35.5-12.5z" fill="#F37626"/>
     <circle cx="22" cy="115" r="19" fill="#9E9E9E" />
     <circle cx="185" cy="70" r="14" fill="#616161" />
     <circle cx="185" cy="160" r="9" fill="#757575" />
@@ -222,19 +161,9 @@ const JupyterLogo = () => (
 const PostmanLogo = () => (
   <svg viewBox="0 0 32 32" className="w-7 h-7">
     <circle cx="16" cy="16" r="16" fill="#FF6C37" />
-    <path
-      d="M22.1 9.9a8.7 8.7 0 0 0-12.3 12.3l1.1-1.1a7.2 7.2 0 0 1 0-10.1l.1-.1 3.6 3.6-1.3 1.3 4.1 4.1 1.3-1.3 3.5 3.5.1-.1a7.2 7.2 0 0 0 0-10.1l-.2-.1z"
-      fill="white"
-    />
-    <path
-      d="M14.3 15l2.8-2.8 2.8 2.8-2.8 2.8z"
-      fill="#FF6C37"
-    />
-    <path
-      d="M17.1 12.2l3.6-3.6c.1.1.2.1.3.2l-3.6 3.6-.3-.2zM19.9 15l3.5-3.5.2.3-3.5 3.5-.2-.3zM14.3 15l-3.5 3.5-.2-.3 3.5-3.5.2.3zM17.1 17.8l-3.6 3.6-.3-.2 3.6-3.6.3.2z"
-      fill="white"
-      opacity="0.8"
-    />
+    <path d="M22.1 9.9a8.7 8.7 0 0 0-12.3 12.3l1.1-1.1a7.2 7.2 0 0 1 0-10.1l.1-.1 3.6 3.6-1.3 1.3 4.1 4.1 1.3-1.3 3.5 3.5.1-.1a7.2 7.2 0 0 0 0-10.1l-.2-.1z" fill="white"/>
+    <path d="M14.3 15l2.8-2.8 2.8 2.8-2.8 2.8z" fill="#FF6C37"/>
+    <path d="M17.1 12.2l3.6-3.6c.1.1.2.1.3.2l-3.6 3.6-.3-.2zM19.9 15l3.5-3.5.2.3-3.5 3.5-.2-.3zM14.3 15l-3.5 3.5-.2-.3 3.5-3.5.2.3zM17.1 17.8l-3.6 3.6-.3-.2 3.6-3.6.3.2z" fill="white" opacity="0.8"/>
   </svg>
 );
 
@@ -246,125 +175,112 @@ const VercelLogo = () => (
 
 const GitHubLogo = () => (
   <svg viewBox="0 0 98 96" className="w-7 h-7">
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
-      fill="white"
-    />
+    <path fillRule="evenodd" clipRule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="white"/>
   </svg>
 );
 
+const skillCategories = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React / Next.js", Logo: ReactLogo },
+      { name: "TypeScript", Logo: TypeScriptLogo },
+      { name: "CSS / Tailwind", Logo: TailwindLogo },
+      { name: "Material UI", Logo: MuiLogo },
+      { name: "State (Zustand)", Logo: ReduxLogo },
+    ],
+  },
+  {
+    category: "Backend & DevOps",
+    skills: [
+      { name: "Node.js / Express", Logo: NodeLogo },
+      { name: "PHP / Laravel", Logo: LaravelLogo },
+      { name: "Databases (SQL/NoSQL)", Logo: MySQLLogo },
+      { name: "REST APIs", Logo: ApiLogo },
+      { name: "Docker", Logo: DockerLogo },
+    ],
+  },
+  {
+    category: "AI & Machine Learning",
+    skills: [
+      { name: "Python / PyTorch", Logo: PythonLogo },
+      { name: "Scikit-learn", Logo: MlLogo },
+      { name: "LLMs & GenAI", Logo: AiLogo },
+      { name: "LangChain", Logo: BrainLogo },
+    ],
+  },
+];
+
 const toolCards = [
-  { name: "VS Code",  Logo: VsCodeLogo,  desc: "Primary IDE",     bg: "#1565C0" },
-  { name: "Figma",   Logo: FigmaLogo,   desc: "UI Design",       bg: "#2c1a3e" },
-  { name: "Jupyter", Logo: JupyterLogo, desc: "ML Notebooks",    bg: "#1a1208" },
-  { name: "Postman", Logo: PostmanLogo, desc: "API Testing",     bg: "#4a1a08" },
-  { name: "Vercel",  Logo: VercelLogo,  desc: "Deployment",      bg: "#111111" },
-  { name: "GitHub",  Logo: GitHubLogo,  desc: "Version Control", bg: "#161b22" },
+  { name: "VS Code",  Logo: VsCodeLogo,  desc: "Primary IDE" },
+  { name: "Figma",   Logo: FigmaLogo,   desc: "UI Design" },
+  { name: "Jupyter", Logo: JupyterLogo, desc: "ML Notebooks" },
+  { name: "Postman", Logo: PostmanLogo, desc: "API Testing" },
+  { name: "Vercel",  Logo: VercelLogo,  desc: "Deployment" },
+  { name: "GitHub",  Logo: GitHubLogo,  desc: "Version Control" },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-pad relative">
-      <div
-        className="absolute inset-x-0 top-0 h-px pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.4) 50%, transparent 100%)",
-        }}
-      />
-
+    <section id="skills" className="section-pad relative z-10 bg-neutral-950">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <AnimatedSection className="text-center mb-16">
-          <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            What I Work With
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Skills &amp; <span className="gradient-text">Expertise</span>
+        
+        <AnimatedSection className="text-center mb-24">
+          <span className="eyebrow mb-4 block">Tech Stack</span>
+          <h2 className="display-grad text-[clamp(2.5rem,5vw,5rem)] font-extrabold leading-none tracking-tight">
+            Skills & Expertise
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full mb-4" />
-          <p className="text-slate-400 max-w-xl mx-auto text-sm">
-            A unique blend of full-stack engineering and applied AI — covering
-            the complete spectrum from UI to intelligent model integration.
-          </p>
         </AnimatedSection>
 
-        {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
           {skillCategories.map((cat, ci) => (
-            <AnimatedSection
-              key={cat.category}
-              delay={ci * 0.1}
-              className="glass border border-white/8 rounded-2xl p-6 card-lift"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div
-                  className="w-2 h-8 rounded-full"
-                  style={{ background: cat.color }}
-                />
-                <h3 className="font-semibold text-white text-lg">{cat.category}</h3>
-              </div>
-              <div className="space-y-3">
-                {cat.skills.map((skill, si) => {
-                  const { Logo } = skill;
-                  return (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: ci * 0.1 + si * 0.05 }}
-                      whileHover={{ x: 4, borderColor: "rgba(255,255,255,0.15)" }}
-                      className="flex items-center gap-3 p-3 rounded-xl bg-white/3 border border-white/5 hover:bg-white/6 transition-all duration-200"
-                    >
-                      <div
-                        className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 shadow-inner"
-                        style={{
-                          background: `${cat.color}15`,
-                          border: `1px solid ${cat.color}30`
-                        }}
+            <AnimatedSection key={cat.category} delay={ci * 0.1}>
+              <div className="surf-card rounded-3xl p-8 h-full">
+                <h3 className="font-bold text-white text-xl mb-8 border-b border-[var(--bd-2)] pb-4">
+                  {cat.category}
+                </h3>
+                <div className="space-y-4">
+                  {cat.skills.map((skill, si) => {
+                    const { Logo } = skill;
+                    return (
+                      <motion.div
+                        key={skill.name}
+                        whileHover={{ x: 6 }}
+                        className="flex items-center gap-4 group cursor-default"
                       >
-                        <Logo />
-                      </div>
-                      <span className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-                        {skill.name}
-                      </span>
-                    </motion.div>
-                  );
-                })}
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-neutral-900 border border-[var(--bd-2)] group-hover:border-neutral-700 transition-colors grayscale group-hover:grayscale-0">
+                          <Logo />
+                        </div>
+                        <span className="text-sm font-medium text-neutral-400 group-hover:text-white transition-colors">
+                          {skill.name}
+                        </span>
+                      </motion.div>
+                    );
+                  })}
+                </div>
               </div>
             </AnimatedSection>
           ))}
         </div>
 
-        {/* Tool cards */}
         <AnimatedSection>
-          <p className="text-center text-slate-500 text-sm uppercase tracking-widest mb-6">
-            Tools &amp; Workflow
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <span className="eyebrow mb-8 block text-center">Tools & Workflow</span>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {toolCards.map((tool, i) => {
               const { Logo } = tool;
               return (
                 <motion.div
                   key={tool.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.07 }}
-                  whileHover={{ scale: 1.06, borderColor: "rgba(99,102,241,0.45)" }}
-                  className="glass border border-white/8 rounded-xl p-4 text-center cursor-default flex flex-col items-center gap-2"
+                  whileHover={{ y: -5 }}
+                  className="surf-card rounded-2xl p-6 text-center flex flex-col items-center gap-4 group"
                 >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ background: tool.bg }}
-                  >
+                  <div className="w-12 h-12 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all opacity-60 group-hover:opacity-100">
                     <Logo />
                   </div>
-                  <p className="text-white text-sm font-medium leading-tight">{tool.name}</p>
-                  <p className="text-slate-500 text-xs">{tool.desc}</p>
+                  <div>
+                    <p className="text-white text-sm font-bold">{tool.name}</p>
+                    <p className="text-neutral-500 text-xs mt-1">{tool.desc}</p>
+                  </div>
                 </motion.div>
               );
             })}

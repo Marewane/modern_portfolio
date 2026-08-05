@@ -1,168 +1,137 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import AnimatedSection from "./ui/AnimatedSection";
 
 const experiences = [
   {
     type: "work",
-    title: "Full Stack JS MERN Developer (Internship)",
+    title: "Full Stack JS MERN Developer",
     company: "Ark-x Talent Solutions",
     companyUrl: "https://www.ark-x.tech",
-    period: "2024 – 2025",
+    period: "2024 — 2025",
     location: "Casablanca, Morocco",
-    description:
-      "Designed and developed a modern, interactive educational web platform end-to-end. Built a robust Full Stack architecture for user and content management, covering front-end, back-end, databases and the full software lifecycle.",
-    tags: ["React", "Next.js", "Node.js", "MongoDB", "Tailwind CSS", "MERN"],
-    accent: "#6366f1",
+    description: "Designed and developed a modern, interactive educational web platform end-to-end. Built a robust Full Stack architecture covering front-end, back-end, databases and the full software lifecycle.",
+    tags: ["React", "Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
   },
   {
     type: "education",
-    title: "Licence d'Excellence — Intelligence Artificielle",
-    company: "Faculté des Sciences Ben M'sick, Casablanca",
+    title: "Licence d'Excellence — AI",
+    company: "Faculté des Sciences Ben M'sick",
     companyUrl: "#",
-    period: "2023 – 2026",
+    period: "2023 — 2026",
     location: "Casablanca, Morocco",
-    description:
-      "Specialisation in artificial intelligence algorithms, machine learning and data science. Covers deep learning (CNNs, Transformers), NLP, computer vision and AI application development. Graduation project: intelligent invoice information extraction using the Donut vision-language model (F1 80.23%).",
-    tags: ["Machine Learning", "Deep Learning", "PyTorch", "NLP", "Python", "Computer Vision"],
-    accent: "#10b981",
+    description: "Specialisation in artificial intelligence algorithms, machine learning and data science. Covers deep learning (CNNs, Transformers), NLP, computer vision and AI application development.",
+    tags: ["Machine Learning", "Deep Learning", "PyTorch", "NLP", "Python"],
   },
   {
     type: "work",
-    title: "AI Project — Intelligent Invoice Extraction",
-    company: "Final Year Project (PFE)",
+    title: "Intelligent Invoice Extraction",
+    company: "Final Year Project",
     companyUrl: "#",
-    period: "2025 – 2026",
+    period: "2025 — 2026",
     location: "Casablanca, Morocco",
-    description:
-      "End-to-end system based on the Donut (OCR-free) vision-language model to extract structured fields from invoices. Fine-tuned on the CORD v2 dataset reaching a micro F1 score of 80.23%. Deployed via a microservices architecture using React, Express.js, and FastAPI.",
-    tags: ["Donut Model", "FastAPI", "React", "PyTorch", "Express.js", "Microservices"],
-    accent: "#06b6d4",
+    description: "End-to-end system based on the Donut vision-language model to extract structured fields from invoices. Fine-tuned on the CORD v2 dataset reaching a micro F1 score of 80.23%.",
+    tags: ["Donut Model", "FastAPI", "React", "Microservices"],
   },
   {
     type: "education",
-    title: "Développement Web Full Stack (Bac+2)",
-    company: "OFPPT – CFPMS, Tit Mellil",
+    title: "Développement Web Full Stack",
+    company: "OFPPT – CFPMS",
     companyUrl: "#",
-    period: "2021 – 2023",
+    period: "2021 — 2023",
     location: "Tit Mellil, Casablanca",
-    description:
-      "Intensive formation covering front-end and back-end technologies, databases and the full software development cycle. Solid foundation in PHP, JavaScript, SQL, responsive design and REST APIs.",
-    tags: ["PHP", "JavaScript", "MySQL", "HTML/CSS", "Bootstrap", "REST APIs"],
-    accent: "#8b5cf6",
+    description: "Intensive formation covering front-end and back-end technologies, databases and the full software development cycle. Solid foundation in PHP, JavaScript, SQL, responsive design.",
+    tags: ["PHP", "JavaScript", "MySQL", "REST APIs"],
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-pad relative">
-      <div
-        className="absolute inset-0 pointer-events-none"
+    <section id="experience" className="section-pad relative z-10 bg-neutral-950">
+      
+      {/* Background grid */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-20"
         style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 20% 50%, rgba(6,182,212,0.04) 0%, transparent 60%)",
+          backgroundImage: "linear-gradient(to right, var(--bd-2) 1px, transparent 1px), linear-gradient(to bottom, var(--bd-2) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+          maskImage: "radial-gradient(100% 100% at 50% 0%, #000 20%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(100% 100% at 50% 0%, #000 20%, transparent 80%)"
         }}
       />
 
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Header */}
-        <AnimatedSection className="text-center mb-16">
-          <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            My Journey
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Experience &amp; <span className="gradient-text">Education</span>
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
+        <AnimatedSection className="text-center mb-24">
+          <span className="eyebrow mb-4 block">The Path</span>
+          <h2 className="display-grad text-[clamp(2.5rem,5vw,5rem)] font-extrabold leading-none tracking-tight">
+            Experience & Education
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full" />
         </AnimatedSection>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-white/10 to-transparent" />
-
-          <div className="space-y-10">
+          {/* Vertical central line for desktop */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[var(--bd-2)] -translate-x-1/2" />
+          
+          <div className="space-y-16 md:space-y-24">
             {experiences.map((exp, i) => {
-              const isLeft = i % 2 === 0;
-              const Icon = exp.type === "work" ? Briefcase : GraduationCap;
+              const num = String(i + 1).padStart(2, "0");
+              const isEven = i % 2 === 0;
 
               return (
-                <AnimatedSection
-                  key={i}
-                  delay={i * 0.12}
-                  direction={isLeft ? "right" : "left"}
-                  className={`relative flex flex-col md:flex-row gap-6 md:gap-0 ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                <AnimatedSection 
+                  key={i} 
+                  direction={isEven ? "right" : "left"}
+                  delay={0.1}
                 >
-                  {/* Content card */}
-                  <div
-                    className={`ml-14 md:ml-0 w-full md:w-[calc(50%-3rem)] ${
-                      isLeft ? "md:pr-10" : "md:pl-10"
-                    }`}
-                  >
-                    <div className="glass border border-white/8 rounded-2xl p-6 card-lift group">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <h3 className="text-white font-semibold text-base group-hover:text-indigo-300 transition-colors">
-                            {exp.title}
-                          </h3>
-                          <a
-                            href={exp.companyUrl}
-                            className="text-sm flex items-center gap-1 mt-0.5 hover:text-white transition-colors"
-                            style={{ color: exp.accent }}
-                          >
-                            {exp.company}
-                            <ExternalLink size={11} />
-                          </a>
-                        </div>
-                        <div className="text-right shrink-0 ml-4">
-                          <p className="text-xs text-slate-400">{exp.period}</p>
-                          <p className="text-xs text-slate-500">{exp.location}</p>
-                        </div>
-                      </div>
-
-                      <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                        {exp.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5">
-                        {exp.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-0.5 rounded text-xs border"
-                            style={{
-                              background: `${exp.accent}15`,
-                              color: exp.accent,
-                              borderColor: `${exp.accent}30`,
-                            }}
-                          >
-                            {tag}
+                  <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${isEven ? "" : "md:flex-row-reverse"}`}>
+                    
+                    {/* Ghost Number / Desktop spacer */}
+                    <div className={`w-full md:w-1/2 flex justify-start ${isEven ? "md:justify-end" : "md:justify-start"}`}>
+                      <div className="relative">
+                        <span className="text-[6rem] md:text-[8rem] font-black text-neutral-900 leading-none select-none">
+                          {num}
+                        </span>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="surf-panel h-12 w-12 rounded-full flex items-center justify-center text-white font-mono text-sm border-[var(--bd-2)] shadow-xl">
+                            {num}
                           </span>
-                        ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Center icon */}
-                  <div className="absolute left-0 md:left-1/2 top-6 md:-translate-x-1/2 z-10">
-                    <motion.div
-                      whileHover={{ scale: 1.15 }}
-                      className="w-12 h-12 rounded-xl flex items-center justify-center border"
-                      style={{
-                        background: `${exp.accent}20`,
-                        borderColor: `${exp.accent}40`,
-                        boxShadow: `0 0 20px ${exp.accent}30`,
-                      }}
-                    >
-                      <Icon size={18} style={{ color: exp.accent }} />
-                    </motion.div>
-                  </div>
+                    {/* Content Card */}
+                    <div className="w-full md:w-1/2">
+                      <div className="surf-card p-8 md:p-10 rounded-3xl hover:-translate-y-1 transition-transform duration-300">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                          <span className="chip px-3 py-1 rounded-full text-xs font-mono text-white uppercase tracking-wider">
+                            {exp.type === "work" ? "Experience" : "Education"}
+                          </span>
+                          <span className="text-sm font-mono text-neutral-500 tracking-widest">{exp.period}</span>
+                        </div>
+                        
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
+                          {exp.title}
+                        </h3>
+                        
+                        <a href={exp.companyUrl} className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors mb-6 text-sm">
+                          {exp.company} <ExternalLink size={14}/>
+                        </a>
 
-                  {/* Spacer */}
-                  <div className="hidden md:block w-[calc(50%-3rem)]" />
+                        <p className="text-neutral-400 text-sm md:text-base leading-relaxed mb-6">
+                          {exp.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {exp.tags.map(tag => (
+                            <span key={tag} className="chip px-3 py-1.5 rounded-full text-xs font-mono text-neutral-400">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
                 </AnimatedSection>
               );
             })}

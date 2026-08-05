@@ -1,31 +1,22 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 import AnimatedSection from "./ui/AnimatedSection";
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "john.doe@email.com",
-    href: "mailto:john.doe@email.com",
-    color: "#6366f1",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
-    color: "#06b6d4",
+    value: "marwane.ahmed@example.com",
+    href: "mailto:marwane.ahmed@example.com",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "New York, USA",
+    value: "Casablanca, Morocco",
     href: "#",
-    color: "#10b981",
   },
 ];
 
@@ -34,18 +25,14 @@ type FormState = "idle" | "loading" | "success" | "error";
 export default function Contact() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("loading");
-    // Simulate a network request
     await new Promise((r) => setTimeout(r, 1500));
     setFormState("success");
     setForm({ name: "", email: "", subject: "", message: "" });
@@ -53,210 +40,70 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-pad relative">
-      {/* Top divider */}
-      <div
-        className="absolute inset-x-0 top-0 h-px pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.4) 50%, transparent 100%)",
-        }}
-      />
-      {/* BG glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 50% 60% at 50% 100%, rgba(99,102,241,0.07) 0%, transparent 70%)",
-        }}
-      />
-
+    <section id="contact" className="section-pad relative z-10 bg-neutral-950">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <AnimatedSection className="text-center mb-16">
-          <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-3">
-            Get In Touch
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Let&apos;s <span className="gradient-text">Work Together</span>
+        
+        <AnimatedSection className="text-center mb-24">
+          <span className="eyebrow mb-4 block">Get In Touch</span>
+          <h2 className="display-grad text-[clamp(2.5rem,5vw,5rem)] font-extrabold leading-none tracking-tight mb-6">
+            Let's Work Together
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 mx-auto rounded-full mb-6" />
-          <p className="text-slate-400 max-w-xl mx-auto text-base">
-            Full-stack developer with solid AI foundations — open to roles,
-          freelance projects, and research collaborations. Drop me a message
-          and I&apos;ll reply within 24 hours.
+          <p className="text-neutral-400 max-w-xl mx-auto text-lg font-light">
+            Open to full-stack roles, AI/ML projects, internships and freelance work.
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          {/* Left — contact info */}
-          <AnimatedSection direction="right" className="lg:col-span-2 space-y-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <AnimatedSection direction="right" className="space-y-6">
             {contactInfo.map((info) => {
               const Icon = info.icon;
               return (
-                <a
-                  key={info.label}
-                  href={info.href}
-                  className="flex items-center gap-4 glass border border-white/8 rounded-2xl p-5 card-lift group"
-                >
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                    style={{
-                      background: `${info.color}18`,
-                      border: `1px solid ${info.color}35`,
-                    }}
-                  >
-                    <Icon size={20} style={{ color: info.color }} />
+                <a key={info.label} href={info.href} className="flex items-center gap-6 surf-card p-6 rounded-2xl group">
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-neutral-900 border border-[var(--bd-2)] text-neutral-400 group-hover:text-white group-hover:border-white transition-colors">
+                    <Icon size={24} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 mb-0.5">{info.label}</p>
-                    <p className="text-sm font-medium text-slate-200 group-hover:text-white transition-colors">
-                      {info.value}
-                    </p>
+                    <p className="text-sm text-neutral-500 uppercase tracking-widest font-mono mb-1">{info.label}</p>
+                    <p className="text-lg font-medium text-white">{info.value}</p>
                   </div>
                 </a>
               );
             })}
-
-            {/* Availability callout */}
-            <div className="glass border border-indigo-500/20 rounded-2xl p-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 pulse-dot" />
-                <span className="text-emerald-400 text-sm font-semibold">
-                  Currently Available
-                </span>
-              </div>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Open to full-stack roles, AI/ML projects, internships and
-                freelance work. Response time: &lt;24h.
-              </p>
-            </div>
           </AnimatedSection>
 
-          {/* Right — form */}
-          <AnimatedSection direction="left" delay={0.1} className="lg:col-span-3">
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className="glass border border-white/8 rounded-2xl p-8 space-y-5"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <AnimatedSection direction="left">
+            <form onSubmit={handleSubmit} className="surf-card p-8 md:p-10 rounded-3xl space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-xs font-medium text-slate-400 mb-2"
-                  >
-                    Your Name
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    placeholder="John Smith"
-                    value={form.name}
-                    onChange={handleChange}
-                    className="input-field w-full px-4 py-3 rounded-xl text-sm"
-                  />
+                  <label htmlFor="name" className="block text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">Name</label>
+                  <input id="name" name="name" type="text" required placeholder="John Doe" value={form.name} onChange={handleChange}
+                    className="input-field w-full px-5 py-4 rounded-xl text-sm" />
                 </div>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-xs font-medium text-slate-400 mb-2"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="john@example.com"
-                    value={form.email}
-                    onChange={handleChange}
-                    className="input-field w-full px-4 py-3 rounded-xl text-sm"
-                  />
+                  <label htmlFor="email" className="block text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">Email</label>
+                  <input id="email" name="email" type="email" required placeholder="john@example.com" value={form.email} onChange={handleChange}
+                    className="input-field w-full px-5 py-4 rounded-xl text-sm" />
                 </div>
+              </div>
+              
+              <div>
+                <label htmlFor="subject" className="block text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">Subject</label>
+                <input id="subject" name="subject" type="text" required placeholder="Project Inquiry" value={form.subject} onChange={handleChange}
+                  className="input-field w-full px-5 py-4 rounded-xl text-sm" />
               </div>
 
               <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-xs font-medium text-slate-400 mb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  required
-                  placeholder="Project Inquiry / Collaboration / Say Hi"
-                  value={form.subject}
-                  onChange={handleChange}
-                  className="input-field w-full px-4 py-3 rounded-xl text-sm"
-                />
+                <label htmlFor="message" className="block text-xs font-mono text-neutral-500 uppercase tracking-widest mb-2">Message</label>
+                <textarea id="message" name="message" required rows={4} placeholder="Hello..." value={form.message} onChange={handleChange}
+                  className="input-field w-full px-5 py-4 rounded-xl text-sm resize-none" />
               </div>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-xs font-medium text-slate-400 mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  placeholder="Tell me about your project, timeline, and budget..."
-                  value={form.message}
-                  onChange={handleChange}
-                  className="input-field w-full px-4 py-3 rounded-xl text-sm resize-none"
-                />
-              </div>
-
-              {/* Submit */}
-              <motion.button
-                id="contact-submit-btn"
-                type="submit"
-                disabled={formState === "loading" || formState === "success"}
-                whileHover={{ scale: formState === "idle" ? 1.01 : 1 }}
+              <motion.button type="submit" disabled={formState !== "idle"}
+                whileHover={{ scale: formState === "idle" ? 1.02 : 1 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-base transition-all duration-300 ${
-                  formState === "success"
-                    ? "bg-emerald-600 text-white"
-                    : formState === "error"
-                    ? "bg-red-600 text-white"
-                    : "bg-indigo-600 hover:bg-indigo-500 text-white shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:shadow-[0_0_50px_rgba(99,102,241,0.5)]"
-                }`}
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold bg-white text-black hover:bg-neutral-200 transition-colors disabled:opacity-50"
               >
-                {formState === "loading" && (
-                  <>
-                    <motion.div
-                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                    />
-                    Sending...
-                  </>
-                )}
-                {formState === "success" && (
-                  <>
-                    <CheckCircle size={18} /> Message Sent!
-                  </>
-                )}
-                {formState === "error" && (
-                  <>
-                    <AlertCircle size={18} /> Failed — Try Again
-                  </>
-                )}
-                {formState === "idle" && (
-                  <>
-                    <Send size={18} /> Send Message
-                  </>
-                )}
+                {formState === "loading" ? "Sending..." : formState === "success" ? "Message Sent!" : "Send Message"}
               </motion.button>
             </form>
           </AnimatedSection>
