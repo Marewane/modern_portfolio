@@ -54,9 +54,9 @@ export default function About() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {stats.map((stat, i) => (
-                <div key={i} className="surf-card rounded-2xl p-6 text-center">
-                  <p className="text-3xl font-bold text-white mb-2">{stat.value}</p>
-                  <p className="text-xs text-neutral-500 uppercase tracking-widest">{stat.label}</p>
+                <div key={i} className="surf-card rounded-2xl p-6 text-center overflow-hidden">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 truncate">{stat.value}</p>
+                  <p className="text-[10px] sm:text-xs text-neutral-500 uppercase tracking-widest truncate">{stat.label}</p>
                 </div>
               ))}
             </div>

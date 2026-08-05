@@ -62,9 +62,9 @@ export default function Contact() {
                   <div className="w-14 h-14 rounded-full flex items-center justify-center bg-neutral-900 border border-[var(--bd-2)] text-neutral-400 group-hover:text-white group-hover:border-white transition-colors">
                     <Icon size={24} />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-sm text-neutral-500 uppercase tracking-widest font-mono mb-1">{info.label}</p>
-                    <p className="text-lg font-medium text-white">{info.value}</p>
+                    <p className="text-base sm:text-lg font-medium text-white break-words">{info.value}</p>
                   </div>
                 </a>
               );

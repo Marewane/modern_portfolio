@@ -59,13 +59,18 @@ export default function Projects() {
           </h2>
         </AnimatedSection>
 
-        <div className="flex flex-col items-center gap-32">
+        <div className="relative w-full pb-[20vh]">
           {projects.map((project, i) => {
             const num = String(i + 1).padStart(2, "0");
             
             return (
-              <AnimatedSection key={project.id} className="w-full relative group">
-                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 surf-card p-6 md:p-12 rounded-3xl">
+              <div 
+                key={project.id} 
+                className="sticky w-full transition-transform"
+                style={{ top: `calc(10vh + ${i * 40}px)`, zIndex: i + 10 }}
+              >
+                <AnimatedSection className="w-full relative group shadow-2xl mb-12">
+                  <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 surf-card p-6 md:p-12 rounded-3xl border border-[var(--bd-2)]">
                   
                   {/* Image Section */}
                   <div className="w-full lg:w-3/5 aspect-video relative rounded-2xl overflow-hidden bg-neutral-900 border border-[var(--bd-2)]">
@@ -121,9 +126,9 @@ export default function Projects() {
                       )}
                     </div>
                   </div>
-
-                </div>
-              </AnimatedSection>
+                  </div>
+                </AnimatedSection>
+              </div>
             );
           })}
         </div>

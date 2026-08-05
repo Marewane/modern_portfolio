@@ -109,13 +109,17 @@ export default function Experience() {
                           <span className="text-sm font-mono text-neutral-500 tracking-widest">{exp.period}</span>
                         </div>
                         
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight break-words">
                           {exp.title}
                         </h3>
                         
-                        <a href={exp.companyUrl} className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors mb-6 text-sm">
-                          {exp.company} <ExternalLink size={14}/>
-                        </a>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-6">
+                          <a href={exp.companyUrl} className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm break-words">
+                            {exp.company} <ExternalLink size={14} className="shrink-0"/>
+                          </a>
+                          <span className="hidden sm:inline text-[var(--bd-2)]">•</span>
+                          <span className="text-neutral-500 text-sm break-words">{exp.location}</span>
+                        </div>
 
                         <p className="text-neutral-400 text-sm md:text-base leading-relaxed mb-6">
                           {exp.description}
