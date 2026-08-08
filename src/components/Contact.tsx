@@ -8,9 +8,9 @@ import AnimatedSection from "./ui/AnimatedSection";
 const contactInfo = [
   {
     icon: Mail,
-    label: "Email",
-    value: "marwane.laamiri@example.com",
-    href: "mailto:marwane.laamiri@example.com",
+    label: "Professional Email",
+    value: "laamirimarwane6@gmail.com",
+    href: "mailto:laamirimarwane6@gmail.com",
   },
   {
     icon: MapPin,

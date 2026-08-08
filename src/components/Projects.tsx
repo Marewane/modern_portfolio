@@ -34,6 +34,26 @@ const projects = [
     liveUrl: "https://core-trade-taupe.vercel.app/",
     githubUrl: "https://github.com/Marewane/CoreTrade.git",
     image: "/projects/core-trade.png",
+  },
+  {
+    id: 4,
+    title: "Receipt Understanding Pipeline",
+    category: "Machine Learning",
+    description: "Developed a structured field extraction system from scanned receipts, transforming images into actionable data. Uses Donut (Hugging Face Transformers) for end-to-end processing without a separate OCR step.",
+    tags: ["Machine Learning", "Donut", "Hugging Face", "Python"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/Marewane/receiptExtractor",
+    image: "",
+  },
+  {
+    id: 5,
+    title: "Pollen Grain Image Classifier",
+    category: "Deep Learning",
+    description: "Developed a Convolutional Neural Network (CNN) to classify images of pollen grains by type. Implemented the preprocessing and training pipeline with TensorFlow, Keras, NumPy, and OpenCV.",
+    tags: ["Deep Learning", "TensorFlow", "Keras", "OpenCV"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/Marewane/Pollen_Grain",
+    image: "",
   }
 ];
 

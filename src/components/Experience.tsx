@@ -80,11 +80,6 @@ function Timeline({ items, type }: { items: any[], type: "work" | "education" })
                     <span className="text-[6rem] md:text-[8rem] font-black text-neutral-900 leading-none select-none">
                       {num}
                     </span>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="surf-panel h-12 w-12 rounded-full flex items-center justify-center text-white font-mono text-sm border-[var(--bd-2)] shadow-xl">
-                        {num}
-                      </span>
-                    </div>
                   </div>
                 </div>
 
@@ -103,9 +98,9 @@ function Timeline({ items, type }: { items: any[], type: "work" | "education" })
                     </h3>
                     
                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-6">
-                      <a href={exp.companyUrl} className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors text-sm break-words">
-                        {exp.company} <ExternalLink size={14} className="shrink-0"/>
-                      </a>
+                      <span className="inline-flex items-center gap-1.5 text-neutral-400 text-sm break-words">
+                        {exp.company}
+                      </span>
                       <span className="hidden sm:inline text-[var(--bd-2)]">•</span>
                       <span className="text-neutral-500 text-sm break-words">{exp.location}</span>
                     </div>
