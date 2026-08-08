@@ -43,7 +43,7 @@ const projects = [
     tags: ["Machine Learning", "Donut", "Hugging Face", "Python"],
     liveUrl: "#",
     githubUrl: "https://github.com/Marewane/receiptExtractor",
-    image: "",
+    image: "/projects/receipt-pipeline.png",
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const projects = [
     tags: ["Deep Learning", "TensorFlow", "Keras", "OpenCV"],
     liveUrl: "#",
     githubUrl: "https://github.com/Marewane/Pollen_Grain",
-    image: "",
+    image: "/projects/pollen-classifier.png",
   }
 ];
 
